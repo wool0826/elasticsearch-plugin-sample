@@ -1,0 +1,21 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="IncorrectHttpHeaderInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="customHeaders">
+        <set>
+          <option value="X-AnyGW-read-timeout" />
+          <option value="X-AnyGW-connection-timeout" />
+        </set>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ReplaceUntilWithRangeUntil" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <searchConfiguration name="Lombok 의 @Value 사용을 검출합니다. record 사용을 권장합니다." uuid="6c15d939-b851-3fb9-83e0-cb66a021a87e" description="Lombok 의 @Value 사용을 검출합니다.&#10;@Value 대신 Java 의 record 로 선언합니다." suppressId="do-not-use-lombok-value-annotation" text="@Value&#10;class $Class$ {}" recursive="true" caseInsensitive="true" type="JAVA" pattern_context="default">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Class" target="true" within="" contains="" />
+      </searchConfiguration>
+    </inspection_tool>
+  </profile>
+</component>

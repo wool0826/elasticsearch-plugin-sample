@@ -1,0 +1,53 @@
+buildscript {
+    ext {
+        elasticSearchVersion = "8.4.2"
+        pluginName = "myPlugin"
+        pluginDescription = "my first plugin for test"
+        pluginClassname = "com.example.MyPlugin"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath "org.elasticsearch.gradle:build-tools:${elasticSearchVersion}"
+    }
+}
+
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'elasticsearch.esplugin'
+
+group = 'org.example'
+version = '1.0.0.0' + '-es-' + elasticSearchVersion
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.elasticsearch:elasticsearch:${elasticSearchVersion}"
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+esplugin {
+    name pluginName
+    description pluginDescription
+    classname pluginClassname
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
